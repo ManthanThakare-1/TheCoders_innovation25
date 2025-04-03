@@ -1,5 +1,6 @@
-import flask import Flask
-app = Flask(__name__)
-if __name__ == '__main__':
+import requests
+server = "127.0.0.1:5000"
 
-    app.run(debug=True)
+data = {"text":"Hello world"}
+response = requests.post(f"http://{server}/send", data=data)
+print(response.text)
